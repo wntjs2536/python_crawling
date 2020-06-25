@@ -1,22 +1,4 @@
-# 해당 코드는 파이썬으로 작성 되어있습니다.
-
-# pandas 모듈, selenium 모듈 설치가 필요합니다.
-# pip install selenium
-# pip install pandas
-# pip install openpyxl
-
-# 크롬 버전과 동일한 크롬 드라이버가 필요합니다.
-
-# 크롬 버전 확인
-# https://mainia.tistory.com/2616 
-
-# 크롬 드라이버 설치
-# https://chromedriver.chromium.org/downloads
-
-# 해당 소스코드.py가 위치한 폴더에서 크롬 드라이버, list.txt 를 위치시켜야 작동합니다.
-# https://github.com/wntjs2536/sun2/blob/master/list.txt (list.txt파일)
-
-import pandas as pd #csv 모듈
+﻿import pandas as pd #csv 모듈
 from selenium import webdriver #셀레니움 모듈
 import time    #지연시간 모듈
 import sys  #파일 읽기,쓰기 모듈
