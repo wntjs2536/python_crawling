@@ -16,3 +16,18 @@
 
 혹은 코드 수정을 하여 지정 경로에 위치시켜주시기 바랍니다.
 
+
+
+The source code is for learning. Do not allow it to be used for malicious or commercial purposes.
+The code is working properly with Chrome, Chromic driver version 83.0.4103.116, (formal build) (64-bit). Please check before running.
+
+Please install the modules below as required.
+
+pip install selenium
+
+pip install bandas
+
+pip install openpyxl
+
+Please place list.txt, crawling.py, and chromedriver.exe in the same folder.
+Or, modify the code and place it in the designated path.
