@@ -13,6 +13,8 @@
 # 크롬 드라이버 설치
 # https://chromedriver.chromium.org/downloads
 
+# 해당 소스코드.py가 위치한 폴더에서 크롬 드라이버, list.txt 를 위치시켜야 작동합니다.
+
 import pandas as pd #csv 모듈
 from selenium import webdriver #셀레니움 모듈
 import time    #지연시간 모듈
