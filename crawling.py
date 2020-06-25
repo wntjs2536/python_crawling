@@ -14,7 +14,7 @@
 # https://chromedriver.chromium.org/downloads
 
 # 해당 소스코드.py가 위치한 폴더에서 크롬 드라이버, list.txt 를 위치시켜야 작동합니다.
-#https://github.com/wntjs2536/sun2/blob/master/list.txt (list.txt파일)
+# https://github.com/wntjs2536/sun2/commit/8cd84717efbf03a6059409a0c1ff12f427f11235 (list.txt파일)
 
 import pandas as pd #csv 모듈
 from selenium import webdriver #셀레니움 모듈
