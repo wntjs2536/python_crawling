@@ -26,7 +26,7 @@ Please install the modules below as required.
 
 pip install selenium
 
-pip install bandas
+pip install pandas
 
 pip install openpyxl
 
