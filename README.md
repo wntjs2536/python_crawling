@@ -18,7 +18,8 @@
 
 
 
-The source code is for learning. Do not allow it to be used for malicious or commercial purposes.
+
+# The source code is for learning. Do not allow it to be used for malicious or commercial purposes.
 The code is working properly with Chrome, Chromic driver version 83.0.4103.116, (formal build) (64-bit). Please check before running.
 
 Please install the modules below as required.
