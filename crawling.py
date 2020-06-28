@@ -58,7 +58,7 @@ for try_crawling in link_list_load:
         pass
     #try 끝
 
-    Category = ('Jusun') #카테고리 지정
+    Category = ('DongSeo University') #카테고리 지정
     temp_Data.append(Category) #카테고리 저장
 
     try: 
@@ -178,16 +178,19 @@ for try_crawling in link_list_load:
     main_image_load = driver.find_element_by_id('landingImage')
     main_img_get = main_image_load.get_attribute('src')
     main_img.append(main_img_get)
-    driver.find_element_by_xpath('//*[@id="imgTagWrapperId"]').click()    #이미지 클릭
     
     img_link = []
     img_html = []
 
     try:
+
+        driver.find_element_by_xpath('//*[@id="imgTagWrapperId"]').click()    #이미지 클릭
+    
         for load_img in range(100):#100번 반복
-            driver.find_element_by_id('ivImage_{}'.format(load_img)).click()   #다른 이미지 변경
+            driver.find_element_by_xpath('//*[@id="ivImage_{}"]'.format(load_img)).click()   #다른 이미지 변경
             #time.sleep(2)
             img = driver.find_element_by_xpath('//*[@id="ivLargeImage"]/img').get_attribute('src')     #확대이미지 주소 추출
+            
             img_link.append(img)
             print('link: ',img)
 
