@@ -1,4 +1,4 @@
-﻿import pandas as pd #csv 모듈
+import pandas as pd #csv 모듈
 from selenium import webdriver #셀레니움 모듈
 import time    #지연시간 모듈
 import sys  #파일 읽기,쓰기 모듈
@@ -48,7 +48,7 @@ for try_crawling in link_list_load:
     #try 끝
 
     try:
-        Product_Name = driver.find_element_by_xpath('//*[@id="productTitle"]').text #제품이릉 로드
+        Product_Name = driver.find_element_by_xpath('//*[@id="productTitle"]').text #제품이름 로드
         temp_Data.append(Product_Name) #제품 이름 저장
         print('Product Name: ',Product_Name)
 
@@ -75,8 +75,7 @@ for try_crawling in link_list_load:
 
     try:
         
-        Product_Info = driver.find_element_by_class_name('bucket').text #상품정보 내역 로드
-        print ('a',Product_Info) #아마존 측에서 상품정보 크롤링을 막은듯 합니다.
+        Product_Info = driver.find_element_by_xpath('//*[@id="detail-bullets"]/table/tbody/tr/td').text #상품정보 내역 로드
         Product_Dimensions_str1 = re.findall('Product Dimensions:.+',Product_Info) #상품 규격 리페달링
         Product_Dimensions_str2 = ("".join(map(str, Product_Dimensions_str1))) 
         Product_Dimensions_str3 = re.findall('([0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9]*[ ][x][ ][0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9]*[ ][x][ ][0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9])',Product_Dimensions_str2) #숫자 추출
@@ -179,8 +178,7 @@ for try_crawling in link_list_load:
     main_image_load = driver.find_element_by_id('landingImage')
     main_img_get = main_image_load.get_attribute('src')
     main_img.append(main_img_get)
-
-    driver.find_element_by_id('imgTagWrapperId').click()    #이미지 클릭
+    driver.find_element_by_xpath('//*[@id="imgTagWrapperId"]').click()    #이미지 클릭
     
     img_link = []
     img_html = []
@@ -188,6 +186,7 @@ for try_crawling in link_list_load:
     try:
         for load_img in range(100):#100번 반복
             driver.find_element_by_id('ivImage_{}'.format(load_img)).click()   #다른 이미지 변경
+            #time.sleep(2)
             img = driver.find_element_by_xpath('//*[@id="ivLargeImage"]/img').get_attribute('src')     #확대이미지 주소 추출
             img_link.append(img)
             print('link: ',img)
