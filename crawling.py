@@ -75,12 +75,14 @@ for try_crawling in link_list_load:
 
     try:
         
-        Product_Info = driver.find_element_by_xpath('//*[@id="detail-bullets"]/table/tbody/tr/td').text #상품정보 내역 로드
-        Product_Dimensions_str1 = re.findall('Product Dimensions:.+',Product_Info) #상품 규격 리페달링
+        Product_Info = driver.find_element_by_xpath('//*[@id="detailBullets_feature_div"]/ul').text #상품정보 내역 로드
+        Product_Dimensions_str1 = re.findall('Product Dimensions:.+' ,Product_Info) #상품 규격 리페달링
+        print(Product_Dimensions_str1)
         Product_Dimensions_str2 = ("".join(map(str, Product_Dimensions_str1))) 
         Product_Dimensions_str3 = re.findall('([0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9]*[ ][x][ ][0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9]*[ ][x][ ][0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9])',Product_Dimensions_str2) #숫자 추출
+        print(Product_Dimensions_str3)
         Product_Dimensions_str4 = ("".join(map(str, Product_Dimensions_str3))) #문자화
-        print('Dimensions: ',Product_Dimensions_str4) 
+        
         Product_Dimensions = re.findall('([0-9]*[0-9]*[0-9]*[\.]*[0-9]*[0-9]*[0-9])',Product_Dimensions_str4) #규격 로드
 
         Dimensions_loading = 0
